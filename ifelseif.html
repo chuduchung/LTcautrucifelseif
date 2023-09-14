@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<label><input type="text" placeholder="Tên người dùng" id="username"></label>
+<label><input type="text" placeholder="Mật khẩu" id="password"></label>
+<button onclick="sukien()">Đăng nhập</button>
+
+<p id="loichao"></p>
+
+<script>
+    function sukien() {
+        let name = document.getElementById("username").value;
+        if (name == "Admin") {
+            let pass = document.getElementById("password").value;
+            if (pass == "TheMaster") {
+                document.getElementById("loichao").innerHTML = "Welcome!";
+            } else {
+                if (pass == null) {
+                    document.getElementById("loichao").innerHTML = "Canceled";
+                } else {
+                    document.getElementById("loichao").innerHTML = "Wrong password";
+                }
+            }
+
+
+        }   else {
+            if (name == null) {
+                document.getElementById("loichao").innerHTML = "Canceled";
+            }   else {
+                document.getElementById("loichao").innerHTML = "I don't know you";
+            }
+        }
+    }
+</script>
+
+</body>
+</html>
